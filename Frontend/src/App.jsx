@@ -1,39 +1,3 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
-
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
@@ -47,9 +11,8 @@ function App() {
     <Router>
       <div>
         {/* Navigation Bar */}
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container">
-            <Link className="navbar-brand" to="/">My Portfolio</Link>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <div className="container justify-content-center">
             <button
               className="navbar-toggler"
               type="button"
@@ -61,41 +24,41 @@ function App() {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">Home</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about-me">About Me</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/about-me">About Me</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/project1">Project 1</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project1">Project 1</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/project2">Project 2</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project2">Project 2</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/random-image">Random Image</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/random-image">Random Image</Link>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-        
 
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-me" element={<AboutMe />} />
-          <Route path="/project1" element={<Project1 />} />
-          <Route path="/project2" element={<Project2 />} />
-          <Route path="/random-image" element={<RandomImage />} />
-        </Routes>
+        {/* Add spacing for the fixed navbar */}
+        <div style={{ marginTop: '80px' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-me" element={<AboutMe />} />
+            <Route path="/project1" element={<Project1 />} />
+            <Route path="/project2" element={<Project2 />} />
+            <Route path="/random-image" element={<RandomImage />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
 }
 
 export default App;
-

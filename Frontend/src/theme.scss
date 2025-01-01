@@ -1,0 +1,41 @@
+// Define the color palette
+$primary-color: #070F2B; // Dark blue (background)
+$secondary-color: #1B1A55; // Deep violet
+$accent-color: #535C91; // Blue-gray
+$text-color: #9290C3; // Light violet
+$hover-highlight-color: #FFFFFF; // White for text on hover/focus
+$button-hover-bg: #535C91; // Blue-gray for button hover background
+
+// Apply the body background and text color
+body {
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+// Navbar customization
+.navbar {
+  background-color: $primary-color !important;
+
+  .nav-link {
+    color: $text-color !important; // Light violet text for buttons
+    border: none; // Remove border in default state
+    border-radius: 8px; // Rounded corners
+    padding: 6px 12px; // Button padding
+    margin-right: 8px; // Space between buttons
+    transition: all 0.3s ease-in-out; // Smooth hover and focus transitions
+    outline: none; // Remove the default focus outline
+
+    &:hover {
+      background-color: $button-hover-bg !important; // Blue-gray background on hover
+      color: $hover-highlight-color !important; // White text on hover
+    }
+
+    &:focus,
+    &:active {
+      border: 1px solid $text-color; // Show border on focus/active
+      background-color: $button-hover-bg !important; // Blue-gray background
+      color: $hover-highlight-color !important; // White text
+      box-shadow: 0 0 8px $hover-highlight-color; // Subtle glow effect
+    }
+  }
+}
