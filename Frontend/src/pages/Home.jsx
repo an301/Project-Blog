@@ -7,7 +7,7 @@ function Home() {
       {/* Scrolling Marquee Text */}
       <div className="marquee">
         <p>
-          print('welcome to my portfolio') · println('welcome to my portfolio') · console.log('welcome to my portfolio') · &lt;h1&gt;welcome to my portfolio&lt;/h1&gt;
+          print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(<span id="printText2">"Welcome To My Portfolio"</span>) · console.log(<span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;<span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
         </p>
       </div>
 

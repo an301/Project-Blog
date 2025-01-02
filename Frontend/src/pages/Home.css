@@ -8,7 +8,7 @@
     font-family: 'Google Sans', sans-serif;
     color: #FFFFFF; /* White */
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   /* Marquee Styling */
@@ -24,10 +24,26 @@
     display: inline-block;
     animation: scroll-left 15s linear infinite; /* Smooth scrolling animation */
     font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    color: #FFFFFF; /* White text */
+    font-size: 32px;
+    color: rgb(200,230,150); 
   }
   
+  #printText1{
+    color: rgb(226 141 112); 
+  }
+
+  #printText2{
+    color: rgb(226 141 112); 
+  }
+
+  #printText3{
+    color: rgb(226 141 112); 
+  }
+
+  #printText4{
+    color: rgb(226 141 112); 
+  }
+
   /* Animation for scrolling text */
   @keyframes scroll-left {
     0% {

@@ -1,13 +1,13 @@
 import React from 'react';
 
 // Importing logos
-import pythonLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/python.png';
-import cssLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/css.png';
-import htmlLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/html.png';
-import javaLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/java.png';
-import jsLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/js.png';
-import mlLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/ml.png';
-import sqlLogo from '/Users/anam301/Documents/GitHub/Project-Blog/Frontend/src/assets/logos/sql.png';
+import pythonLogo from '/src/assets/logos/python.png';
+import cssLogo from '/src/assets/logos/css.png';
+import htmlLogo from '/src/assets/logos/html.png';
+import javaLogo from '/src/assets/logos/java.png';
+import jsLogo from '/src/assets/logos/js.png';
+import mlLogo from '/src/assets/logos/ml.png';
+import sqlLogo from '/src/assets/logos/sql.png';
 
 function AboutMe() {
   const technologies = [
