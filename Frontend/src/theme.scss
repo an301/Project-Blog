@@ -1,5 +1,5 @@
 $primary-color: #070F2B; // Dark blue (background)
-$secondary-color: #1B1A55; // Deep violet
+$secondary-color: #350f7c; // Deep violet
 $accent-color: #535C91; // Blue-gray
 $text-color: #9290C3; // Light violet
 $hover-highlight-color: #FFFFFF; // White for text on hover/focus
@@ -79,14 +79,16 @@ body {
 /* Import JetBrains Mono font */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
+
 /* Apply JetBrains Mono to paragraph tags */
-p {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 16px; 
-  line-height: 1.5; 
-  color: #acabdb; 
-  
+/* Apply JetBrains Mono to all paragraph tags globally */
+body p {
+  font-family: 'JetBrains Mono', monospace !important; /* Force application */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ACABDB; /* Ensure it matches your theme */
 }
+
 
 /* Import Google Sans font */
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
