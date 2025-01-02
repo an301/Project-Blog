@@ -1,3 +1,4 @@
+// Color Variables
 $primary-color: #070F2B; // Dark blue (background)
 $secondary-color: #350f7c; // Deep violet
 $accent-color: #535C91; // Blue-gray
@@ -21,41 +22,44 @@ $button-hover-bg: #535C91; // Blue-gray for button hover background
 // Apply the animated gradient background to the body
 body {
   background: linear-gradient(120deg, $primary-color, $secondary-color);
-  background-size: 200% 200%; 
-  animation: flowing-gradient 10s infinite ease-in-out; 
-  color: $text-color; 
-  transition: color 0.3s ease-in-out; 
+  background-size: 200% 200%; // Larger size for smoother transitions
+  animation: flowing-gradient 10s infinite ease-in-out; // Smooth gradient animation
+  color: $text-color; // Default text color
+  margin: 0; // Reset margins
+  transition: color 0.3s ease-in-out; // Smooth color transitions
+  font-family: 'JetBrains Mono', monospace; // Default font fallback
 }
 
 // Navbar customization
 .navbar {
-  background-color: transparent !important; // Transparent so it inherits the gradient background
+  background-color: transparent !important; // Transparent to show gradient background
 
   .nav-link {
-    font-family: 'Google Sans', sans-serif;
-    color: $text-color !important; 
-    border: none; 
-    border-radius: 8px; 
-    padding: 6px 12px; 
-    margin-right: 8px; 
-    transition: all 0.3s ease-in-out; 
-    outline: none; 
+    font-family: 'Google Sans', sans-serif; // Use Google Sans for navigation
+    color: $text-color !important; // Light violet text for buttons
+    border: none; // Remove border in default state
+    border-radius: 8px; // Rounded corners
+    padding: 6px 12px; // Button padding
+    margin-right: 8px; // Space between buttons
+    transition: all 0.3s ease-in-out; // Smooth hover and focus transitions
+    outline: none; // Remove the default focus outline
 
     &:hover {
-      background-color: $button-hover-bg !important; 
-      color: $hover-highlight-color !important; 
+      background-color: $button-hover-bg !important; // Blue-gray background on hover
+      color: $hover-highlight-color !important; // White text on hover
+    }
 
     &:focus,
     &:active {
-      border: 1px solid $text-color; 
-      background-color: $button-hover-bg !important; 
-      color: $hover-highlight-color !important;
+      border: 1px solid $text-color; // Show border on focus/active
+      background-color: $button-hover-bg !important; // Blue-gray background
+      color: $hover-highlight-color !important; // White text
       box-shadow: 0 0 8px $hover-highlight-color; // Subtle glow effect
     }
   }
 }
 
-/* Hover effect for technology items */
+// Hover effect for technology items
 .tech-item {
   padding: 10px;
   border-radius: 8px;
@@ -63,7 +67,7 @@ body {
 }
 
 .tech-text {
-  transition: font-weight 0.3s ease; 
+  transition: font-weight 0.3s ease; // Smooth transition to bold
 }
 
 .tech-item:hover .tech-text {
@@ -71,33 +75,45 @@ body {
 }
 
 .tech-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 4px; 
+  width: 70px;
+  height: 70px;
+  border-radius: 4px; // Optional for slight rounding
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Import JetBrains Mono font */
+// Fonts
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
-
-/* Apply JetBrains Mono to paragraph tags */
-/* Apply JetBrains Mono to all paragraph tags globally */
-body p {
-  font-family: 'JetBrains Mono', monospace !important; /* Force application */
-  font-size: 16px;
-  line-height: 1.5;
-  color: #ACABDB; /* Ensure it matches your theme */
-}
-
-
-/* Import Google Sans font */
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
 
-/* Apply Google Sans to all header tags */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Google Sans', sans-serif;
-  color: #FFFFFF; 
-  font-weight: 700;
-  line-height: 1.2; 
+// Paragraph Styling
+p {
+  font-family: 'JetBrains Mono', monospace !important; // Apply JetBrains Mono globally to paragraphs
+  font-size: 16px; // Readable font size
+  line-height: 1.5; // Better spacing between lines
+  color: $text-color; // Ensure consistency with the theme
 }
+
+// Header Styling
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Google Sans', sans-serif; // Apply Google Sans to all headers
+  color: #FFFFFF; // White headers for high contrast
+  font-weight: 700; // Bold headers for emphasis
+  line-height: 1.2; // Improve spacing and readability
+}
+
+// Button Customization
+button {
+  font-family: 'JetBrains Mono', monospace; // Use JetBrains Mono for buttons
+  color: $text-color; // Match button text with theme
+  background-color: $primary-color; // Dark blue background
+  border: 1px solid $accent-color; // Blue-gray border
+  border-radius: 5px; // Slight rounding
+  padding: 8px 16px; // Comfortable padding
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-bg; // Blue-gray background on hover
+    color: $hover-highlight-color; // White text on hover
+    box-shadow: 0 0 8px $hover-highlight-color; // Subtle glow on hover
+  }
 }

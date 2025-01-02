@@ -1,9 +1,18 @@
 import React from 'react';
+import './Home.css'; // Import custom CSS for the marquee effect
 
 function Home() {
   return (
-    <div className="container text-center mt-5" style={{ color: '#9290C3' }}>
-      <h1 className="mb-4" style={{ color: '#FFFFFF' }}>Welcome to My Portfolio</h1>
+    <div className="home-container text-center">
+      {/* Scrolling Marquee Text */}
+      <div className="marquee">
+        <p>
+          print('welcome to my portfolio') · println('welcome to my portfolio') · console.log('welcome to my portfolio') · &lt;h1&gt;welcome to my portfolio&lt;/h1&gt;
+        </p>
+      </div>
+
+      {/* Main Content */}
+      <h1 className="header">Welcome to My Portfolio</h1>
       <p className="mt-3">
         Explore my work, learn about me, and see what I’ve been building.
       </p>
@@ -18,5 +27,3 @@ function Home() {
 }
 
 export default Home;
-
-
