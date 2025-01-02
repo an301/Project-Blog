@@ -1,4 +1,3 @@
-// Define the color palette
 $primary-color: #070F2B; // Dark blue (background)
 $secondary-color: #1B1A55; // Deep violet
 $accent-color: #535C91; // Blue-gray
@@ -6,36 +5,97 @@ $text-color: #9290C3; // Light violet
 $hover-highlight-color: #FFFFFF; // White for text on hover/focus
 $button-hover-bg: #535C91; // Blue-gray for button hover background
 
-// Apply the body background and text color
+// Keyframes for flowing gradient movement
+@keyframes flowing-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+// Apply the animated gradient background to the body
 body {
-  background-color: $primary-color;
-  color: $text-color;
+  background: linear-gradient(120deg, $primary-color, $secondary-color);
+  background-size: 200% 200%; 
+  animation: flowing-gradient 10s infinite ease-in-out; 
+  color: $text-color; 
+  transition: color 0.3s ease-in-out; 
 }
 
 // Navbar customization
 .navbar {
-  background-color: $primary-color !important;
+  background-color: transparent !important; // Transparent so it inherits the gradient background
 
   .nav-link {
-    color: $text-color !important; // Light violet text for buttons
-    border: none; // Remove border in default state
-    border-radius: 8px; // Rounded corners
-    padding: 6px 12px; // Button padding
-    margin-right: 8px; // Space between buttons
-    transition: all 0.3s ease-in-out; // Smooth hover and focus transitions
-    outline: none; // Remove the default focus outline
+    font-family: 'Google Sans', sans-serif;
+    color: $text-color !important; 
+    border: none; 
+    border-radius: 8px; 
+    padding: 6px 12px; 
+    margin-right: 8px; 
+    transition: all 0.3s ease-in-out; 
+    outline: none; 
 
     &:hover {
-      background-color: $button-hover-bg !important; // Blue-gray background on hover
-      color: $hover-highlight-color !important; // White text on hover
-    }
+      background-color: $button-hover-bg !important; 
+      color: $hover-highlight-color !important; 
 
     &:focus,
     &:active {
-      border: 1px solid $text-color; // Show border on focus/active
-      background-color: $button-hover-bg !important; // Blue-gray background
-      color: $hover-highlight-color !important; // White text
+      border: 1px solid $text-color; 
+      background-color: $button-hover-bg !important; 
+      color: $hover-highlight-color !important;
       box-shadow: 0 0 8px $hover-highlight-color; // Subtle glow effect
     }
   }
+}
+
+/* Hover effect for technology items */
+.tech-item {
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tech-text {
+  transition: font-weight 0.3s ease; 
+}
+
+.tech-item:hover .tech-text {
+  font-weight: bold;
+}
+
+.tech-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px; 
+}
+
+/* Import JetBrains Mono font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Apply JetBrains Mono to paragraph tags */
+p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px; 
+  line-height: 1.5; 
+  color: #acabdb; 
+  
+}
+
+/* Import Google Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+
+/* Apply Google Sans to all header tags */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Google Sans', sans-serif;
+  color: #FFFFFF; 
+  font-weight: 700;
+  line-height: 1.2; 
+}
 }

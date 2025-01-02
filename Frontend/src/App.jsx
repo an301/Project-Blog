@@ -33,10 +33,10 @@ function App() {
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/about-me">About Me</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project1">Project 1</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project1">Book Recommender</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project2">Project 2</Link>
+                  <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project2">Voice-Based Code Editor</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/random-image">Random Image</Link>
