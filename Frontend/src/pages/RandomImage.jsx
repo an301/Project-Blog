@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_PIXABAY_API_KEY;;
+const API_KEY = process.env.REACT_APP_PIXABAY_API_KEY;
 const QUERIES = [
   "nature", "animals", "travel", "space", "technology", "ocean", "mountains", 
   "forests", "wildlife", "architecture", "cities", "food", "sports", 
@@ -35,7 +35,7 @@ function RandomImage() {
       // Select a random query
       const randomQuery = QUERIES[Math.random() * QUERIES.length | 0];
 
-      // Make the API call
+      // Make he API call
       const response = await axios.get("https://pixabay.com/api/", {
         params: {
           key: API_KEY,
@@ -43,7 +43,7 @@ function RandomImage() {
           image_type: "photo",
           orientation: "horizontal",
           safesearch: true,
-          per_page: 10, // Fetch up to 10 images for better chances
+          per_page: 20, 
         },
       });
 
