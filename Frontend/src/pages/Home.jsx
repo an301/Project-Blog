@@ -37,20 +37,26 @@ function Home() {
   ];
 
   return (
-    <div className="home-container text-center">
+    <div className="home-container">
       {/* Scrolling Marquee Text */}
-      <div className="marquee">
-        <p>
-          print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(
-          <span id="printText2">"Welcome To My Portfolio"</span>) · console.log(
-          <span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;
-          <span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
-        </p>
+      <div className="marquee-container text-center">
+        <div className="marquee">
+          <p>
+            print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(
+            <span id="printText2">"Welcome To My Portfolio"</span>) · console.log(
+            <span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;
+            <span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
+          </p>
+        </div>
       </div>
 
       {/* Main Content */}
-      <h1 className="header">Hi, I'm Anish</h1>
-      <p className="mt-3">Learn about me, explore my projects, and see what I've built.</p>
+      <div className="text-center intro-container">
+        <h1 className="header">Hi, I'm Anish</h1>
+        <p className="intro-text">
+          Learn about me, explore my projects, and see what I've built.
+        </p>
+      </div>
 
       {/* Cards Section */}
       <div className="d-flex justify-content-center flex-wrap mt-5">
