@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css'; // Import custom CSS for the marquee effect
+
 
 function Home() {
   return (
@@ -12,7 +12,7 @@ function Home() {
       </div>
 
       {/* Main Content */}
-      <h1 className="header">Welcome to My Portfolio</h1>
+      <h1 className="header">Hi, I'm Anish</h1>
       <p className="mt-3">
         Explore my work, learn about me, and see what I’ve been building.
       </p>

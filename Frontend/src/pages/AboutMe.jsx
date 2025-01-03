@@ -92,13 +92,31 @@ function AboutMe() {
       {/* Contact Information Section */}
       <div className="mt-5">
         <h2 className="mb-4" style={{ color: '#FFFFFF' }}>Contact Me</h2>
-        <p>
-        🌐 GitHub: <a href="https://github.com/an301" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD700' }}>github.com/an301</a><br />
-          📧 Email: <a href="mailto:anish.nambi@gmail.com" style={{ color: '#FFD700' }}>anish.nambi@gmail.com</a><br />
-          💼 LinkedIn: <a href="https://linkedin.com/in/anish-nambirajan" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD700' }}>linkedin.com/in/anish-nambirajan</a>
-        </p>
+        <div className="d-flex flex-wrap justify-content-center">
+          <a
+            href="https://github.com/an301"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary mx-2"
+          >
+            GitHub
+          </a>
+          <a
+            href="mailto:anish.nambi@gmail.com"
+            className="btn btn-secondary mx-2"
+          >
+            Email
+          </a>
+          <a
+            href="https://linkedin.com/in/anish-nambirajan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary mx-2"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
-   
     </div>
   );
 }

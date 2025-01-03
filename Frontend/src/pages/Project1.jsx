@@ -7,10 +7,11 @@ function Project1() {
     <div className="container text-center mt-5">
       <h1 className="mb-4">Book Recommender System</h1>
       <p className="mt-3">
-        The Book Recommender System helps users find books similar to the ones they already love. Using advanced machine learning algorithms, it suggests titles based on similarities in authors, categories, and descriptions.
+        The Book Recommender System helps users find books similar to the ones they already enjoy. Using machine learning algorithms, it suggests titles based on similarities in authors, categories, and descriptions.
       </p>
 
       <h2 className="mt-5">How It Works</h2>
+      <div id = "howitwp1">
       <p className="mt-3">
         The system uses a dataset of books containing titles, authors, categories, descriptions, and publication years.
       </p>
@@ -23,6 +24,7 @@ function Project1() {
       <p>
         The top 30 similar books are listed, excluding the input book itself.
       </p>
+      </div>
 
       <h2 className="mt-5">System Workflow</h2>
       <p className="mt-3">1. The user enters the title of a book.</p>
@@ -47,6 +49,7 @@ function Project1() {
         <li> Advanced similarity calculations using cosine similarity</li>
         <li> Easy-to-use interface for entering book names</li>
         <li> Support for multiple genres and authors</li>
+        <li> Displays author name and publication date along with the title</li>
       </ul>
 
       <h2 className="mt-5">Technologies Used</h2>

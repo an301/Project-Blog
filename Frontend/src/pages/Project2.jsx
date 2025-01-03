@@ -14,7 +14,7 @@ function Project2() {
       </p>
 
       <h2 className="mt-5">How It Works</h2>
-      <ul className="key-features list-unstyled">
+      <ul className="key-features list-unstyled" style={{ color: '#F5E65A' }}>
         <li>- Converts speech to Python code using the <strong>speech_recognition</strong> library and Google Speech API.</li>
         <li>- Supports spoken commands for symbols such as "open parentheses" or "semicolon."</li>
         <li>- Displays the generated code and its output after processing the voice input.</li>
@@ -25,9 +25,9 @@ function Project2() {
         <li>
           <strong>Step 1:</strong> Install the necessary dependencies:
           <ul>
-            <li>flask</li>
-            <li>speech_recognition</li>
-            <li>subprocess</li>
+            <li><strong>flask</strong></li>
+            <li><strong>speech_recognition</strong></li>
+            <li><strong>subprocess</strong></li>
           </ul>
         </li>
         <li>
@@ -70,10 +70,10 @@ function Project2() {
 
       <h2 className="mt-5">Future Considerations</h2>
       <ul className="key-features list-unstyled">
-        <li> Enhance multi-line code block support for more complex tasks.</li>
-        <li> Secure sandbox environment for safe execution of Python code.</li>
-        <li> Real-time feedback and live error checking during dictation.</li>
-        <li> Support f0or additional languages.</li>
+        <li>- Enhance multi-line code block support for more complex tasks.</li>
+        <li>- Secure sandbox environment for safe execution of Python code.</li>
+        <li>- Real-time feedback and live error checking during dictation.</li>
+        <li>- Support for additional languages.</li>
       </ul>
 
       <div className="mt-5">
@@ -85,7 +85,6 @@ function Project2() {
         >
           View on GitHub
         </a>
-        
       </div>
     </div>
   );
