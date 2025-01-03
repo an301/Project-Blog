@@ -15,9 +15,9 @@ function Project2() {
 
       <h2 className="mt-5">How It Works</h2>
       <ul className="key-features list-unstyled" style={{ color: '#F5E65A' }}>
-        <li>- Converts speech to Python code using the <strong>speech_recognition</strong> library and Google Speech API.</li>
-        <li>- Supports spoken commands for symbols such as "open parentheses" or "semicolon."</li>
-        <li>- Displays the generated code and its output after processing the voice input.</li>
+        <li> Converts speech to Python code using the <strong>speech_recognition</strong> library and Google Speech API.</li>
+        <li> Supports spoken commands for symbols such as forward slash (/) or semicolon (;).</li>
+        <li> Displays the generated code and its output after processing the voice input.</li>
       </ul>
 
       <h2 className="mt-5">Usage</h2>
@@ -61,7 +61,7 @@ function Project2() {
       </div>
       <div className="image-block mt-4">
         <img src={uploadImage} alt="Upload Button" className="project-image-large" />
-        <p className="screenshot-caption">Upload Recorded Command</p>
+        <p className="screenshot-caption">Upload Recorded Code</p>
       </div>
       <div className="image-block mt-4">
         <img src={outputImage} alt="Output Display" className="project-image-large" />
@@ -70,10 +70,10 @@ function Project2() {
 
       <h2 className="mt-5">Future Considerations</h2>
       <ul className="key-features list-unstyled">
-        <li>- Enhance multi-line code block support for more complex tasks.</li>
-        <li>- Secure sandbox environment for safe execution of Python code.</li>
-        <li>- Real-time feedback and live error checking during dictation.</li>
-        <li>- Support for additional languages.</li>
+        <li> Enhance multi-line code block support for more complex tasks.</li>
+        <li> Secure sandbox environment for safe execution of Python code.</li>
+        <li> Real-time feedback and live error checking during dictation.</li>
+        <li> Support for additional languages.</li>
       </ul>
 
       <div className="mt-5">
