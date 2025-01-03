@@ -326,3 +326,39 @@ p {
   color: $hover-highlight-color;
   font-size: 14px;
 }
+
+// **Button Container**
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05); // Subtle background
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  width: 150px; // Adjust size for consistency
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1); // Brighter on hover
+    box-shadow: 0 0 10px $hover-highlight-color; // Glow effect
+    transform: scale(1.05); // Slight zoom
+  }
+}
+
+// **Button Image**
+.button-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+// **Button Text**
+.button-text {
+  font-family: 'Google Sans', sans-serif;
+  color: $hover-highlight-color;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}

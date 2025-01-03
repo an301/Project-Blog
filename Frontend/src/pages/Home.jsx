@@ -1,5 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+// Import button images
+import aboutMeImage from '/src/assets/buttons/aboutme.png';
+import project1Image from '/src/assets/buttons/project1.png';
+import project2Image from '/src/assets/buttons/project2.png';
+import randomImage from '/src/assets/buttons/randomimage.png';
 
 function Home() {
   return (
@@ -16,12 +22,26 @@ function Home() {
       <p className="mt-3">
         Explore my work, learn about me, and see what I’ve been building.
       </p>
-      <p className="mt-3">
-        Use the navigation bar above to learn more about me and check out my projects.
-      </p>
-      <p className="mt-3">
-        This portfolio includes projects like a <strong>Book Recommender</strong> and a <strong>Voice-Based Code Editor</strong>.
-      </p>
+
+      {/* Buttons Section */}
+      <div className="d-flex justify-content-center flex-wrap mt-5">
+        <Link to="/about-me" className="button-container mx-2">
+          <img src={aboutMeImage} alt="About Me" className="button-image" />
+          <p className="button-text">About Me</p>
+        </Link>
+        <Link to="/project1" className="button-container mx-2">
+          <img src={project1Image} alt="Project 1" className="button-image" />
+          <p className="button-text">Book Recommender</p>
+        </Link>
+        <Link to="/project2" className="button-container mx-2">
+          <img src={project2Image} alt="Project 2" className="button-image" />
+          <p className="button-text">Voice-Based Code Editor</p>
+        </Link>
+        <Link to="/random-image" className="button-container mx-2">
+          <img src={randomImage} alt="Random Image" className="button-image" />
+          <p className="button-text">Random Image API</p>
+        </Link>
+      </div>
     </div>
   );
 }
