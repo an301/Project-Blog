@@ -1,11 +1,11 @@
 // **Color Variables**
-$primary-color: #070F2B; // Dark blue (background)
-$secondary-color: #1A2A6C; // Deep violet
-$accent-color: #535C91; // Blue-gray
-$text-color: #9290C3; // Light violet
-$hover-highlight-color: #FFFFFF; // White for text on hover/focus
-$button-hover-bg: $accent-color; // Blue-gray for button hover background
-$navbar-bg-color: #1B1A55; // Solid deep violet for the navbar background
+$primary-color: #070F2B;
+$secondary-color: #1A2A6C; 
+$accent-color: #535C91;
+$text-color: #9290C3; 
+$hover-highlight-color: #FFFFFF; 
+$button-hover-bg: $accent-color; 
+$navbar-bg-color: #1B1A55;
 
 // **Keyframes for Flowing Gradient Movement**
 @keyframes flowing-gradient {
@@ -361,4 +361,42 @@ p {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+}
+
+// Card Customization
+.custom-card {
+  background-color: #2A145A; // Dark purple background
+  color: #FFFFFF; // White text color for readability
+  border-radius: 10px; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Subtle shadow
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  .card-title {
+    color: #FFD700; // Goldish color for title readability
+    font-size: 1.2rem; // Adjust font size
+    font-family: 'Google Sans', sans-serif; // Consistent with your typography
+  }
+
+  .card-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem; // Smaller text size
+    color: #EAEAEA; // Light gray for text
+  }
+
+  .btn {
+    background-color: #535C91; // Blue-gray button
+    color: #FFFFFF; // White text
+    border: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: lighten(#535C91, 10%); // Slightly lighter blue-gray
+      box-shadow: 0 0 8px #FFFFFF; // Glow effect
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05); // Slight zoom on hover
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // Stronger shadow on hover
+  }
 }

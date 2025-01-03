@@ -1,46 +1,71 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Import button images
-import aboutMeImage from '/src/assets/buttons/aboutme.png';
-import project1Image from '/src/assets/buttons/project1.png';
-import project2Image from '/src/assets/buttons/project2.png';
-import randomImage from '/src/assets/buttons/randomimage.png';
+import aboutMeImage from "/src/assets/buttons/aboutme.png";
+import project1Image from "/src/assets/buttons/project1.png";
+import project2Image from "/src/assets/buttons/project2.png";
+import randomImage from "/src/assets/buttons/randomimage.png";
 
 function Home() {
+  const cardData = [
+    {
+      title: "About Me",
+      img: aboutMeImage,
+      text: "Learn more about me and my interests.",
+      link: "/about-me",
+    },
+    {
+      title: "Book Recommender",
+      img: project1Image,
+      text: "Explore my book recommendation system.",
+      link: "/project1",
+    },
+    {
+      title: "Voice-Based Code Editor",
+      img: project2Image,
+      text: "Check out my voice-based coding tool.",
+      link: "/project2",
+    },
+    {
+      title: "Random Image API",
+      img: randomImage,
+      text: "Generate a random image using APIs.",
+      link: "/random-image",
+    },
+  ];
+
   return (
     <div className="home-container text-center">
       {/* Scrolling Marquee Text */}
       <div className="marquee">
         <p>
-          print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(<span id="printText2">"Welcome To My Portfolio"</span>) · console.log(<span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;<span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
+          print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(
+          <span id="printText2">"Welcome To My Portfolio"</span>) · console.log(
+          <span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;
+          <span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
         </p>
       </div>
 
       {/* Main Content */}
       <h1 className="header">Hi, I'm Anish</h1>
-      <p className="mt-3">
-        Explore my work, learn about me, and see what I’ve been building.
-      </p>
+      <p className="mt-3">Learn about me, explore my projects, and see what I've built.</p>
 
-      {/* Buttons Section */}
+      {/* Cards Section */}
       <div className="d-flex justify-content-center flex-wrap mt-5">
-        <Link to="/about-me" className="button-container mx-2">
-          <img src={aboutMeImage} alt="About Me" className="button-image" />
-          <p className="button-text">About Me</p>
-        </Link>
-        <Link to="/project1" className="button-container mx-2">
-          <img src={project1Image} alt="Project 1" className="button-image" />
-          <p className="button-text">Book Recommender</p>
-        </Link>
-        <Link to="/project2" className="button-container mx-2">
-          <img src={project2Image} alt="Project 2" className="button-image" />
-          <p className="button-text">Voice-Based Code Editor</p>
-        </Link>
-        <Link to="/random-image" className="button-container mx-2">
-          <img src={randomImage} alt="Random Image" className="button-image" />
-          <p className="button-text">Random Image API</p>
-        </Link>
+        {cardData.map((card, index) => (
+          <Card key={index} className="custom-card mx-3 mb-4" style={{ width: "16rem" }}>
+            <Card.Img variant="top" src={card.img} />
+            <Card.Body>
+              <Card.Title>{card.title}</Card.Title>
+              <Card.Text>{card.text}</Card.Text>
+              <Link to={card.link}>
+                <Button variant="primary">Explore</Button>
+              </Link>
+            </Card.Body>
+          </Card>
+        ))}
       </div>
     </div>
   );
