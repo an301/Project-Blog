@@ -35,7 +35,7 @@ function RandomImage() {
       // Select a random query
       const randomQuery = QUERIES[Math.random() * QUERIES.length | 0];
 
-      // Make he API call
+      // Make the API call
       const response = await axios.get("https://pixabay.com/api/", {
         params: {
           key: API_KEY,
@@ -43,7 +43,7 @@ function RandomImage() {
           image_type: "photo",
           orientation: "horizontal",
           safesearch: true,
-          per_page: 20, 
+          per_page: 20, // Fetch up to 20 images
         },
       });
 
