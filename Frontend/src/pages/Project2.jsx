@@ -1,6 +1,5 @@
 import React from 'react';
-
-// Importing placeholder images
+import Button from 'react-bootstrap/Button'; 
 import recordImage from '/src/assets/voiceeditor_pics/record.png';
 import uploadImage from '/src/assets/voiceeditor_pics/upload.png';
 import outputImage from '/src/assets/voiceeditor_pics/output.png';
@@ -77,14 +76,14 @@ function Project2() {
       </ul>
 
       <div className="mt-5">
-        <a
+        <Button
           href="https://github.com/an301/voice-based-code-editor"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary mx-2"
+          variant="primary"
         >
           View on GitHub
-        </a>
+        </Button>
       </div>
     </div>
   );

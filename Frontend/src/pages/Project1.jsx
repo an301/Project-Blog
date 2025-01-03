@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button'; // Importing React-Bootstrap Button
 import inputImage from '/src/assets/bookrecommender_pics/recommendinput.png';
 import outputImage from '/src/assets/bookrecommender_pics/recommendoutput.png';
 
@@ -11,19 +12,19 @@ function Project1() {
       </p>
 
       <h2 className="mt-5">How It Works</h2>
-      <div id = "howitwp1">
-      <p className="mt-3">
-        The system uses a dataset of books containing titles, authors, categories, descriptions, and publication years.
-      </p>
-      <p>
-        Features like the author's name and description are weighted and combined to create a unique vector for each book.
-      </p>
-      <p>
-        The system uses the TF-IDF vectorizer and cosine similarity to find books most similar to the one entered by the user.
-      </p>
-      <p>
-        The top 30 similar books are listed, excluding the input book itself.
-      </p>
+      <div id="howitwp1">
+        <p className="mt-3">
+          The system uses a dataset of books containing titles, authors, categories, descriptions, and publication years.
+        </p>
+        <p>
+          Features like the author's name and description are weighted and combined to create a unique vector for each book.
+        </p>
+        <p>
+          The system uses the TF-IDF vectorizer and cosine similarity to find books most similar to the one entered by the user.
+        </p>
+        <p>
+          The top 30 similar books are listed, excluding the input book itself.
+        </p>
       </div>
 
       <h2 className="mt-5">System Workflow</h2>
@@ -56,22 +57,24 @@ function Project1() {
       <p className="mt-3">Python, PyScript, Pandas, TF-IDF Vectorizer, Cosine Similarity</p>
 
       <div className="mt-5">
-        <a
+        <Button
           href="https://github.com/an301/Book_Recommender"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary mx-2"
+          variant="primary"
+          className="mx-2"
         >
           View on GitHub
-        </a>
-        <a
+        </Button>
+        <Button
           href="https://an301.github.io/Book_Recommender/"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-secondary mx-2"
+          variant="secondary"
+          className="mx-2"
         >
           Open Recommender Website
-        </a>
+        </Button>
       </div>
     </div>
   );

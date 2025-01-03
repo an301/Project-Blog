@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import './App.css';
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
@@ -7,12 +9,28 @@ import Project2 from './pages/Project2';
 import RandomImage from './pages/RandomImage';
 
 function App() {
+  const pathProgressMap = {
+    '/': 0,
+    '/about-me': 25,
+    '/project1': 50,
+    '/project2': 75,
+    '/random-image': 100,
+  };
+
+  const location = useLocation();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    setProgress(pathProgressMap[location.pathname] || 0);
+  }, [location]);
+
   return (
-    <Router>
-      <div>
-        {/* Navigation Bar */}
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-          <div className="container justify-content-center">
+    <div>
+      {/* Navigation Bar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div className="container flex-column">
+          {/* Navbar Buttons */}
+          <div className="d-flex justify-content-center">
             <button
               className="navbar-toggler"
               type="button"
@@ -44,21 +62,40 @@ function App() {
               </ul>
             </div>
           </div>
-        </nav>
-
-        {/* Add spacing for the fixed navbar */}
-        <div style={{ marginTop: '80px' }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-me" element={<AboutMe />} />
-            <Route path="/project1" element={<Project1 />} />
-            <Route path="/project2" element={<Project2 />} />
-            <Route path="/random-image" element={<RandomImage />} />
-          </Routes>
+          {/* Progress Bar */}
+          <div className="w-100" style={{ marginTop: '10px' }}>
+            <ProgressBar
+              now={progress}
+              style={{
+                height: '5px',
+                width: '100%',
+                borderRadius: '0',
+              }}
+            />
+          </div>
         </div>
+      </nav>
+
+      {/* Add spacing for the fixed navbar */}
+      <div style={{ marginTop: '100px' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/project1" element={<Project1 />} />
+          <Route path="/project2" element={<Project2 />} />
+          <Route path="/random-image" element={<RandomImage />} />
+        </Routes>
       </div>
+    </div>
+  );
+}
+
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 }
 
-export default App;
+export default AppWrapper;

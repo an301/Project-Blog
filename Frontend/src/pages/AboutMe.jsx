@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button'; // Importing React-Bootstrap Button
 
 // Importing logos
 import pythonLogo from '/src/assets/logos/python.png';
@@ -93,28 +94,31 @@ function AboutMe() {
       <div className="mt-5">
         <h2 className="mb-4" style={{ color: '#FFFFFF' }}>Contact Me</h2>
         <div className="d-flex flex-wrap justify-content-center">
-          <a
+          <Button
             href="https://github.com/an301"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary mx-2"
+            variant="primary"
+            className="mx-2"
           >
             GitHub
-          </a>
-          <a
+          </Button>
+          <Button
             href="mailto:anish.nambi@gmail.com"
-            className="btn btn-secondary mx-2"
+            variant="secondary"
+            className="mx-2"
           >
             Email
-          </a>
-          <a
+          </Button>
+          <Button
             href="https://linkedin.com/in/anish-nambirajan"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary mx-2"
+            variant="primary"
+            className="mx-2"
           >
             LinkedIn
-          </a>
+          </Button>
         </div>
       </div>
     </div>
