@@ -34,7 +34,7 @@ function RandomImage() {
             src={image}
             alt="Random"
             className="img-fluid"
-            style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+            style={{ maxWidth: "65%", height: "auto", borderRadius: "8px" }}
           />
         </div>
       )}
