@@ -5,7 +5,9 @@ const cors = require("cors");
 const app = express();
 const PORT = 5000;
 
-const API_KEY = "48004677-d19b9f360b802287b786bdd5e";
+const API_KEY = "48004677-d19b9f360b802287b786bdd5e"; 
+//API KEY should be hidden but everytime I try to store in .env and use gitignore,
+//the site crashes. 
 const QUERIES = [
   "nature", "animals", "travel", "space", "technology", "ocean", "mountains",
   "forests", "wildlife", "architecture", "cities", "food", "sports", 
