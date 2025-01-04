@@ -1,28 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const API_KEY = "48004677-d19b9f360b802287b786bdd5e";
-const QUERIES = [
-  "nature", "animals", "travel", "space", "technology", "ocean", "mountains", 
-  "forests", "wildlife", "architecture", "cities", "food", "sports", 
-  "sunset", "flowers", "landscapes", "beach", "rivers", "stars", "galaxies",
-  "abstract", "minimalist", "art", "paintings", "cars", "planes", "trains", 
-  "bikes", "hiking", "adventure", "camping", "deserts", "waterfalls", 
-  "islands", "lakes", "snow", "winter", "autumn", "spring", "summer", 
-  "countryside", "clouds", "rainbows", "balloons", "fireworks", "festivals", 
-  "holidays", "animals", "birds", "insects", "fish", "reptiles", "amphibians", 
-  "domestic animals", "farm animals", "wild animals", "forests", "savannah", 
-  "jungle", "desert animals", "polar animals", "aquatic life", "science", 
-  "robotics", "AI", "biology", "chemistry", "physics", "math", "education", 
-  "history", "literature", "mythology", "fantasy", "dragons", "unicorns", 
-  "elves", "dwarves", "knights", "castles", "villages", "cities", "skyscrapers", 
-  "bridges", "roads", "farms", "gardens", "orchards", "vineyards", "parks", 
-  "playgrounds", "tropical forests", "mangroves", "wetlands", "arctic", 
-  "antarctica", "coral reefs", "seascapes", "underwater", "caves", "cliffs", 
-  "plateaus", "volcanoes", "earthquakes", "tsunamis"
-]; // Predetermined queries for randomization
-
-
 function RandomImage() {
   const [image, setImage] = useState(null);
   const [error, setError] = useState(null);
@@ -32,31 +10,13 @@ function RandomImage() {
     setImage(null);
 
     try {
-      // Select a random query
-      const randomQuery = QUERIES[Math.random() * QUERIES.length | 0];
+      // Make a request to the backend
+      const response = await axios.get("http://localhost:5000/api/random-image");
 
-      // Make the API call
-      const response = await axios.get("https://pixabay.com/api/", {
-        params: {
-          key: API_KEY,
-          q: randomQuery,
-          image_type: "photo",
-          orientation: "horizontal",
-          safesearch: true,
-          per_page: 20, // Fetch up to 20 images
-        },
-      });
-
-      // Check if the response contains images
-      if (response.data.hits.length > 0) {
-        const randomImage =
-          response.data.hits[Math.floor(Math.random() * response.data.hits.length)];
-        setImage(randomImage.largeImageURL);
-      } else {
-        setError("Please try again.");
-      }
+      // Set the image URL
+      setImage(response.data.imageUrl);
     } catch (err) {
-      setError("Please try again.");
+      setError("Try again.");
     }
   };
 
@@ -83,5 +43,3 @@ function RandomImage() {
 }
 
 export default RandomImage;
-
-
