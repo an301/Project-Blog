@@ -10,8 +10,9 @@ function RandomImage() {
     setImage(null);
 
     try {
-      // Make request to backend
-      const response = await axios.get("http://localhost:5000/api/random-image");
+      // Update the backend URL with Render's live URL
+      const response = await axios.get("https://project-blog-tdkj.onrender.com/api/random-image");
+                                       
 
       // Set the image URL
       setImage(response.data.imageUrl);
