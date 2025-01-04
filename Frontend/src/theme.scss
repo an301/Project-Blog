@@ -1,38 +1,39 @@
-// **Color Variables**
-$primary-color: #070F2B;
-$secondary-color: #1A2A6C;
-$accent-color: #535C91;
-$text-color: #9290C3;
-$hover-highlight-color: #FFFFFF;
-$button-hover-bg: $accent-color;
-$navbar-bg-color: #1B1A55;
+@import "bootstrap/scss/functions"; // importing bootstrap functions
+@import "bootstrap/scss/variables"; // importing bootstrap variables
 
-// **Keyframes for Flowing Gradient Movement**
+$primary: #070F2B;       // overriding bootstrap's $primary
+$secondary: #1A2A6C;     // overriding bootstrap's $secondary
+$info: #535C91;          // overriding bootstrap's $info
+$white: #FFFFFF;         // overriding bootstrap's $white
+$body-color: #9290C3;    // body text color
+$body-bg: #070F2B;       // body background
+$navbar-color: #9290C3;  // navbar text color
+
+@import "bootstrap/scss/bootstrap"; // importing the rest of bootstrap
+
+$hover-highlight-color: #FFFFFF;    // used for glow effects
+$button-hover-bg: $info;           // button hover background
+$navbar-bg-color: #1B1A55;         // custom navbar background
+
 @keyframes flowing-gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
-// **Apply the Animated Gradient Background to the Body**
+/* applying gradient animation to body */
 body {
-  background: linear-gradient(120deg, $primary-color, $secondary-color, rgb(36, 83, 86));
+  background: linear-gradient(120deg, $primary, $secondary, rgb(36, 83, 86));
   background-size: 200% 200%;
   animation: flowing-gradient 10s infinite ease-in-out;
-  color: $text-color;
+  color: $body-color;
   margin: 0;
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
-  overflow-x: hidden; // remove or comment out if you need horizontal scroll
+  overflow-x: hidden;
 }
 
-// **Responsive Container for Content**
+/* overriding default container if desired */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -40,14 +41,14 @@ body {
   box-sizing: border-box;
 }
 
-// **Navbar Customization** (if you use react-bootstrap Navbar)
+/* navbar customization */
 .navbar {
   background-color: $navbar-bg-color !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   .nav-link {
     font-family: 'Google Sans', sans-serif;
-    color: $text-color !important;
+    color: $body-color !important;
     border: none;
     border-radius: 8px;
     padding: 6px 12px;
@@ -62,7 +63,7 @@ body {
 
     &:focus,
     &:active {
-      border: 1px solid $text-color;
+      border: 1px solid $body-color;
       background-color: $button-hover-bg !important;
       color: $hover-highlight-color !important;
       box-shadow: 0 0 8px $hover-highlight-color;
@@ -70,21 +71,20 @@ body {
   }
 }
 
-// **Typography**
+/* typography overrides */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Google Sans', sans-serif;
-  color: #FFFFFF;
+  color: $white;
   font-weight: 700;
 }
 
 p {
   font-family: 'JetBrains Mono', monospace;
-  color: #F5E65A;
+  color: #F5E65A; // custom golden color
 }
 
-
+/* custom heading & text */
 .header {
-  /* Responsive font: grows from 2rem to 3.5rem depending on viewport width */
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   word-break: break-word;
@@ -99,14 +99,13 @@ p {
   white-space: normal;
 }
 
-
+/* static marquee glow text */
 .static-marquee {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .static-marquee p {
-  /* Even smaller font & milder glow */
   font-size: 12px;
   color: rgb(200, 230, 150);
   animation: glow 3s infinite ease-in-out;
@@ -119,28 +118,27 @@ p {
   color: rgb(226, 141, 112);
 }
 
-/* Keyframes for an even softer glowing effect */
 @keyframes glow {
   0%, 100% {
     text-shadow:
-      0 0 3px #999,    /* lowered from 5 to 3, changed color to #999 */
-      0 0 6px #999,    /* 10 to 6 */
-      0 0 10px #dd2,   /* 15 to 10, color from #ff3 to #dd2 (slightly darker) */
-      0 0 15px #dd2;   /* 25 to 15 */
+      0 0 3px #999,
+      0 0 6px #999,
+      0 0 10px #dd2,
+      0 0 15px #dd2;
   }
   50% {
     text-shadow: none;
   }
 }
 
-// **Media Queries for Responsiveness**
+/* media queries for responsiveness */
 @media (max-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     font-size: 1.8rem;
   }
 
   .static-marquee p {
-    font-size: 10px; /* reduce further on tablet sizes */
+    font-size: 10px;
   }
 }
 
@@ -150,7 +148,7 @@ p {
   }
 
   .static-marquee p {
-    font-size: 9px; /* reduce even more on small screens */
+    font-size: 9px;
   }
 
   .container {
@@ -158,13 +156,13 @@ p {
   }
 }
 
-// **Placeholder for Screenshots**
+/* placeholder / utility classes */
 .placeholder-img {
   width: 200px;
   height: 200px;
   background-color: rgba(255, 255, 255, 0.1);
-  border: 2px dashed $text-color;
-  color: $text-color;
+  border: 2px dashed $body-color;
+  color: $body-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,7 +171,7 @@ p {
   font-family: 'JetBrains Mono', monospace;
 }
 
-// **Project Images**
+/* project images */
 .project-image {
   max-width: 100%;
   height: auto;
@@ -188,104 +186,78 @@ p {
   margin-top: 0.5rem;
 }
 
-// **Buttons**
-.btn {
-  padding: 10px 20px;
-  font-family: 'Google Sans', sans-serif;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  display: inline-block;
-}
-
+/* overriding .btn-primary and .btn-secondary */
 .btn-primary {
-  background-color: $accent-color;
+  background-color: $info;
   border: none;
-  color: $hover-highlight-color;
+  color: $white;
 
   &:hover {
-    background-color: lighten($accent-color, 20%);
-    color: $hover-highlight-color;
+    background-color: lighten($info, 20%);
+    color: $white;
   }
 }
 
 .btn-secondary {
-  background-color: $accent-color;
+  background-color: $info;
   border: none;
-  color: $hover-highlight-color;
+  color: $white;
 
   &:hover {
-    background-color: lighten($accent-color, 20%);
-    color: $hover-highlight-color;
+    background-color: lighten($info, 20%);
+    color: $white;
   }
 }
 
-// **Additional Classes for Layout and Spacing**
+/* using bootstrap utilities with @extend */
 .d-flex {
-  display: flex;
+  @extend .d-flex;
 }
-
 .justify-content-center {
-  justify-content: center;
+  @extend .justify-content-center;
 }
-
 .align-items-center {
-  align-items: center;
+  @extend .align-items-center;
 }
-
 .mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  @extend .mx-2;
 }
-
 .mx-3 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  @extend .mx-3;
 }
-
 .mt-2 {
-  margin-top: 0.5rem;
+  @extend .mt-2;
 }
-
 .mt-3 {
-  margin-top: 1rem;
+  @extend .mt-3;
 }
-
 .mt-4 {
-  margin-top: 1.5rem;
+  @extend .mt-4;
 }
-
 .mt-5 {
-  margin-top: 3rem;
+  @extend .mt-5;
 }
-
 .mb-4 {
-  margin-bottom: 1.5rem;
+  @extend .mb-4;
 }
-
 .list-unstyled {
-  list-style: none;
-  padding-left: 0;
+  @extend .list-unstyled;
 }
 
-// **Responsive Image Container for Project Images**
 .image-container {
   max-width: 45%;
-}
 
-@media (max-width: 768px) {
-  .image-container {
+  @media (max-width: 768px) {
     max-width: 100%;
     margin-bottom: 20px;
-  }
 
-  .d-flex {
-    flex-direction: column;
+    .d-flex {
+      flex-direction: column;
+    }
   }
 }
 
-// Caption under screenshots
+/* custom classes for screenshots, key features, etc. */
 .screenshot-caption {
   color: #FFD700;
   font-family: 'JetBrains Mono', monospace;
@@ -293,7 +265,6 @@ p {
   margin-top: 0.5rem;
 }
 
-// List under Key Features
 .key-features li {
   color: #FF7F50;
   font-family: 'JetBrains Mono', monospace;
@@ -301,25 +272,22 @@ p {
   margin: 5px 0;
 }
 
-// **Project Images (Large Display)**
 .project-image-large {
-  max-width: 80%; 
+  max-width: 80%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
 }
 
-// **Image Block Styling**
 .image-block {
   display: block;
   margin-bottom: 30px;
 }
 
-// **Usage Steps**
 .usage-steps li {
   font-family: 'JetBrains Mono', monospace;
-  color: $text-color;
+  color: $body-color;
   font-size: 16px;
   margin-bottom: 10px;
 }
@@ -331,7 +299,7 @@ p {
   font-size: 14px;
 }
 
-// **Button Container**
+/* button container */
 .button-container {
   display: flex;
   flex-direction: column;
@@ -345,12 +313,11 @@ p {
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px $hover-highlight-color;
+    box-shadow: 0 0 10px $white;
     transform: scale(1.05);
   }
 }
 
-// **Button Image**
 .button-image {
   width: 100px;
   height: 100px;
@@ -358,19 +325,18 @@ p {
   margin-bottom: 10px;
 }
 
-// **Button Text**
 .button-text {
   font-family: 'Google Sans', sans-serif;
-  color: $hover-highlight-color;
+  color: $white;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
 }
 
-// **Card Customization**
+/* card customization */
 .custom-card {
   background-color: #2A145A;
-  color: #FFFFFF; 
+  color: $white; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -384,18 +350,18 @@ p {
   .card-text {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
-    color: #EAEAEA; 
+    color: #EAEAEA;
   }
 
   .btn {
-    background-color: #535C91; 
-    color: #FFFFFF;
+    background-color: #535C91;
+    color: $white;
     border: none;
     transition: all 0.3s ease-in-out;
 
     &:hover {
       background-color: lighten(#535C91, 10%);
-      box-shadow: 0 0 8px #FFFFFF;
+      box-shadow: 0 0 8px $white;
     }
   }
 
