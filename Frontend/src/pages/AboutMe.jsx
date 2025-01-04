@@ -1,7 +1,9 @@
+// React importing
 import React from 'react';
-import Button from 'react-bootstrap/Button'; // Importing React-Bootstrap Button
+// Bootstrap Button importing
+import Button from 'react-bootstrap/Button'; 
 
-// Importing logos
+// logos for the technologies i use
 import pythonLogo from '/src/assets/logos/python.png';
 import cssLogo from '/src/assets/logos/css.png';
 import htmlLogo from '/src/assets/logos/html.png';
@@ -10,7 +12,9 @@ import jsLogo from '/src/assets/logos/js.png';
 import mlLogo from '/src/assets/logos/ml.png';
 import sqlLogo from '/src/assets/logos/sql.png';
 
+// AboutMe section
 function AboutMe() {
+  // Array containing language and its logos as pairs
   const technologies = [
     { name: 'Python', logo: pythonLogo },
     { name: 'CSS', logo: cssLogo },
@@ -22,8 +26,11 @@ function AboutMe() {
   ];
 
   return (
+    // Main container
     <div className="container text-center mt-5" style={{ color: '#9290C3' }}>
+      {/* header */}
       <h1 className="mb-4" style={{ color: '#FFFFFF' }}>About Me</h1>
+      {/* intro text for about me*/}
       <p className="lead">
         Hi, I'm Anish. I'm a freshman studying Computer Science at UC Irvine.
       </p>
@@ -37,21 +44,23 @@ function AboutMe() {
         Outside of coding, I enjoy playing basketball and staying active. I also love going on road trips to places like the beach, where I can relax and have fun.
       </p>
 
-      {/* Technologies Section */}
+      {/* this area contains the technologies I work with as images */}
       <div className="mt-5">
         <h2 className="mb-4" style={{ color: '#FFFFFF' }}>Technologies I Work With</h2>
         <ul className="d-flex flex-wrap justify-content-center list-unstyled">
           {technologies.map((tech, index) => (
             <li
+              // every tech item
               key={index}
               className="tech-item text-center"
               style={{
                 width: '100px',
                 margin: '15px',
                 position: 'relative',
-                marginBottom: '50px', // Added extra bottom margin 
+                marginBottom: '50px', // Extra space
               }}
             >
+              {/*  logo image */}
               <img
                 src={tech.logo}
                 alt={`${tech.name} Logo`}
@@ -75,6 +84,7 @@ function AboutMe() {
                   if (text) text.style.opacity = 0;
                 }}
               />
+              {/* tech name text */}
               <span
                 className="tech-text"
                 style={{
@@ -96,10 +106,11 @@ function AboutMe() {
         </ul>
       </div>
 
-      {/* Contact Information Section */}
+      {/* contact section */}
       <div className="mt-5">
         <h2 className="mb-4" style={{ color: '#FFFFFF' }}>Contact Me</h2>
         <div className="d-flex flex-wrap justify-content-center">
+          {/* GitHub button */}
           <Button
             href="https://github.com/an301"
             target="_blank"
@@ -109,6 +120,7 @@ function AboutMe() {
           >
             GitHub
           </Button>
+          {/* email button */}
           <Button
             href="mailto:anish.nambi@gmail.com"
             variant="secondary"
@@ -116,6 +128,7 @@ function AboutMe() {
           >
             Email
           </Button>
+          {/* linkedIn button */}
           <Button
             href="https://linkedin.com/in/anish-nambirajan"
             target="_blank"
@@ -131,4 +144,5 @@ function AboutMe() {
   );
 }
 
+// Export 
 export default AboutMe;

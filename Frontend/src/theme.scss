@@ -1,19 +1,19 @@
-@import "bootstrap/scss/functions"; // importing bootstrap functions
-@import "bootstrap/scss/variables"; // importing bootstrap variables
+@import "bootstrap/scss/functions"; // bootstrap funcs
+@import "bootstrap/scss/variables"; // bootstrap vars
 
-$primary: #070F2B;       // overriding bootstrap's $primary
-$secondary: #1A2A6C;     // overriding bootstrap's $secondary
-$info: #535C91;          // overriding bootstrap's $info
-$white: #FFFFFF;         // overriding bootstrap's $white
-$body-color: #9290C3;    // body text color
-$body-bg: #070F2B;       // body background
+$primary: #070F2B;   // main color
+$secondary: #1A2A6C;  // secondary color
+$info: #535C91;      // info color
+$white: #FFFFFF;     // just white
+$body-color: #9290C3;  // body text color
+$body-bg: #070F2B;   // body bg color
 $navbar-color: #9290C3;  // navbar text color
 
-@import "bootstrap/scss/bootstrap"; // importing the rest of bootstrap
+@import "bootstrap/scss/bootstrap"; // more bootstrap
 
-$hover-highlight-color: #FFFFFF;    // used for glow effects
-$button-hover-bg: $info;           // button hover background
-$navbar-bg-color: #1B1A55;         // custom navbar background
+$hover-highlight-color: #FFFFFF;    // glow color for the effect
+$button-hover-bg: $info;    // button hover color
+$navbar-bg-color: #1B1A55;   // custom navbar bg
 
 @keyframes flowing-gradient {
   0% { background-position: 0% 0%; }
@@ -21,7 +21,7 @@ $navbar-bg-color: #1B1A55;         // custom navbar background
   100% { background-position: 0% 0%; }
 }
 
-/* applying gradient animation to body */
+// animated gradient for body background
 body {
   background: linear-gradient(120deg, $primary, $secondary, rgb(36, 83, 86));
   background-size: 200% 200%;
@@ -33,7 +33,7 @@ body {
   overflow-x: hidden;
 }
 
-/* overriding default container if desired */
+// container override
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -41,11 +41,11 @@ body {
   box-sizing: border-box;
 }
 
-/* navbar customization */
+// navbar styling
 .navbar {
   background-color: $navbar-bg-color !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+  // google sans font for the styling
   .nav-link {
     font-family: 'Google Sans', sans-serif;
     color: $body-color !important;
@@ -55,7 +55,7 @@ body {
     margin-right: 8px;
     transition: all 0.3s ease-in-out;
     outline: none;
-
+    // hover effects
     &:hover {
       background-color: $button-hover-bg !important;
       color: $hover-highlight-color !important;
@@ -71,19 +71,20 @@ body {
   }
 }
 
-/* typography overrides */
+// headings
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Google Sans', sans-serif;
   color: $white;
   font-weight: 700;
 }
 
+// all paragraph styles
 p {
   font-family: 'JetBrains Mono', monospace;
-  color: #F5E65A; // custom golden color
+  color: #F5E65A; 
 }
 
-/* custom heading & text */
+// main header text
 .header {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
@@ -91,6 +92,7 @@ p {
   white-space: normal;
 }
 
+// smaller intro text
 .intro-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 1.5;
@@ -99,7 +101,7 @@ p {
   white-space: normal;
 }
 
-/* static marquee glow text */
+// marquee section (not moving anymore)
 .static-marquee {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -111,6 +113,7 @@ p {
   animation: glow 3s infinite ease-in-out;
 }
 
+// color for print statement text
 #printText1,
 #printText2,
 #printText3,
@@ -118,6 +121,7 @@ p {
   color: rgb(226, 141, 112);
 }
 
+// glow animation
 @keyframes glow {
   0%, 100% {
     text-shadow:
@@ -131,7 +135,7 @@ p {
   }
 }
 
-/* media queries for responsiveness */
+// responsive breakpoints
 @media (max-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     font-size: 1.8rem;
@@ -156,7 +160,7 @@ p {
   }
 }
 
-/* placeholder / utility classes */
+// placeholder style for placeholders for images
 .placeholder-img {
   width: 200px;
   height: 200px;
@@ -171,7 +175,7 @@ p {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* project images */
+// project image styles
 .project-image {
   max-width: 100%;
   height: auto;
@@ -186,7 +190,7 @@ p {
   margin-top: 0.5rem;
 }
 
-/* overriding .btn-primary and .btn-secondary */
+// overriding .btn-primary
 .btn-primary {
   background-color: $info;
   border: none;
@@ -198,6 +202,7 @@ p {
   }
 }
 
+// overriding .btn-secondary
 .btn-secondary {
   background-color: $info;
   border: none;
@@ -209,7 +214,7 @@ p {
   }
 }
 
-/* using bootstrap utilities with @extend */
+// extend bootstrap utilities
 .d-flex {
   @extend .d-flex;
 }
@@ -244,6 +249,7 @@ p {
   @extend .list-unstyled;
 }
 
+// image container
 .image-container {
   max-width: 45%;
 
@@ -257,7 +263,7 @@ p {
   }
 }
 
-/* custom classes for screenshots, key features, etc. */
+// screenshot caption style
 .screenshot-caption {
   color: #FFD700;
   font-family: 'JetBrains Mono', monospace;
@@ -265,6 +271,7 @@ p {
   margin-top: 0.5rem;
 }
 
+// key features styling for each project
 .key-features li {
   color: #FF7F50;
   font-family: 'JetBrains Mono', monospace;
@@ -285,6 +292,7 @@ p {
   margin-bottom: 30px;
 }
 
+// style the usage steps for the second project
 .usage-steps li {
   font-family: 'JetBrains Mono', monospace;
   color: $body-color;
@@ -299,7 +307,7 @@ p {
   font-size: 14px;
 }
 
-/* button container */
+// container for button styles
 .button-container {
   display: flex;
   flex-direction: column;
@@ -333,7 +341,7 @@ p {
   text-align: center;
 }
 
-/* card customization */
+// custom card styling on home page
 .custom-card {
   background-color: #2A145A;
   color: $white; 

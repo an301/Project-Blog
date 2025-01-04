@@ -1,7 +1,12 @@
+// React Router and Hooks
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+// progress bar from Bootstrap
 import ProgressBar from 'react-bootstrap/ProgressBar';
+
 import './App.css';
+
+// importing pages
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
 import Project1 from './pages/Project1';
@@ -9,6 +14,7 @@ import Project2 from './pages/Project2';
 import RandomImage from './pages/RandomImage';
 
 function App() {
+  // map routes to progress values for the progress bar up top
   const pathProgressMap = {
     '/': 0,
     '/about-me': 25,
@@ -17,19 +23,22 @@ function App() {
     '/random-image': 100,
   };
 
+  // crrent route info
   const location = useLocation();
+  // progress state
   const [progress, setProgress] = useState(0);
 
+  // update progress on route change
   useEffect(() => {
     setProgress(pathProgressMap[location.pathname] || 0);
   }, [location]);
 
   return (
     <div>
-      {/* Navigation Bar */}
+      {/* Nav Bar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container flex-column">
-          {/* Navbar Buttons */}
+          {/* Nav buttons and the toggle*/}
           <div className="d-flex justify-content-center">
             <button
               className="navbar-toggler"
@@ -42,27 +51,33 @@ function App() {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
+            {/* navbar links and where they lead to */}
             <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
               <ul className="navbar-nav">
+                {/* home */}
                 <li className="nav-item">
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/">Home</Link>
                 </li>
+                {/* about me */}
                 <li className="nav-item">
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/about-me">About Me</Link>
                 </li>
+                {/* project 1 */}
                 <li className="nav-item">
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project1">Book Recommender</Link>
                 </li>
+                {/* project 2 */}
                 <li className="nav-item">
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/project2">Voice-Based Code Editor</Link>
                 </li>
+                {/* image api */}
                 <li className="nav-item">
                   <Link className="btn btn-outline-primary nav-link mx-2 rounded" to="/random-image">Random Image</Link>
                 </li>
               </ul>
             </div>
           </div>
-          {/* Progress Bar */}
+          {/* progress bar style*/}
           <div className="w-100" style={{ marginTop: '10px' }}>
             <ProgressBar
               now={progress}
@@ -76,7 +91,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Add spacing for the fixed navbar */}
+      {/* shift for fixed navbar */}
       <div style={{ marginTop: '100px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -98,4 +113,5 @@ function AppWrapper() {
   );
 }
 
+// Export 
 export default AppWrapper;

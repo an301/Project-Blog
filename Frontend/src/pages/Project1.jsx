@@ -1,16 +1,24 @@
+// import React 
 import React from 'react';
-import Button from 'react-bootstrap/Button'; // Importing React-Bootstrap Button
+// import Bootstrap Button
+import Button from 'react-bootstrap/Button'; 
+// images for screenshots for the project
 import inputImage from '/src/assets/bookrecommender_pics/recommendinput.png';
 import outputImage from '/src/assets/bookrecommender_pics/recommendoutput.png';
 
+// Project1 section
 function Project1() {
   return (
+    // main container
     <div className="container text-center mt-5">
+      {/* Heading */}
       <h1 className="mb-4">Book Recommender System</h1>
+      {/* Intro about the project */}
       <p className="mt-3">
         The Book Recommender System helps users find books similar to the ones they already enjoy. Using machine learning algorithms, it suggests titles based on similarities in authors, categories, and descriptions.
       </p>
 
+      {/* explanation of how it works */}
       <h2 className="mt-5">How It Works</h2>
       <div id="howitwp1">
         <p className="mt-3">
@@ -27,11 +35,13 @@ function Project1() {
         </p>
       </div>
 
+      {/* how to use the project steps */}
       <h2 className="mt-5">System Workflow</h2>
       <p className="mt-3">1. The user enters the title of a book.</p>
       <p>2. The system searches for a close match in the dataset.</p>
       <p>3. If a match is found, the system calculates similarity scores for all books and displays the top recommendations.</p>
 
+      {/* screenshots of the project*/}
       <h2 className="mt-5">Screenshots</h2>
       <div className="d-flex justify-content-center align-items-center mt-4">
         <div className="image-container mx-3">
@@ -44,6 +54,7 @@ function Project1() {
         </div>
       </div>
 
+      {/* unordered list showcasing the key features of the project */}
       <h2 className="mt-5">Key Features</h2>
       <ul className="key-features list-unstyled">
         <li> Personalized recommendations based on book content</li>
@@ -53,9 +64,11 @@ function Project1() {
         <li> Displays author name and publication date along with the title</li>
       </ul>
 
+      {/* Technologies used for the project */}
       <h2 className="mt-5">Technologies Used</h2>
       <p className="mt-3">Python, PyScript, Pandas, TF-IDF Vectorizer, Cosine Similarity</p>
 
+      {/* buttons to take to github and to the project website */}
       <div className="mt-5">
         <Button
           href="https://github.com/an301/Book_Recommender"
@@ -80,4 +93,5 @@ function Project1() {
   );
 }
 
+// Export 
 export default Project1;

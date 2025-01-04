@@ -1,17 +1,26 @@
+// importing React 
 import React from 'react';
-import Button from 'react-bootstrap/Button'; 
+// importing Bootstrap Button
+import Button from 'react-bootstrap/Button';
+
+// images for screenshots for the project
 import recordImage from '/src/assets/voiceeditor_pics/record.png';
 import uploadImage from '/src/assets/voiceeditor_pics/upload.png';
 import outputImage from '/src/assets/voiceeditor_pics/output.png';
 
+// Project2 section
 function Project2() {
   return (
+    // main container
     <div className="container text-center mt-5">
+      {/* Title of the project */}
       <h1 className="mb-4">Voice-Based Code Editor</h1>
+      {/* Intro paragraph for the project */}
       <p className="mt-3">
         The Voice-Based Code Editor provides an innovative way to code using voice commands. It converts spoken Python instructions into executable code, offering a hands-free coding experience.
       </p>
 
+      {/* explanation of how it works */}
       <h2 className="mt-5">How It Works</h2>
       <ul className="key-features list-unstyled" style={{ color: '#F5E65A' }}>
         <li> Converts speech to Python code using the <strong>speech_recognition</strong> library and Google Speech API.</li>
@@ -19,6 +28,7 @@ function Project2() {
         <li> Displays the generated code and its output after processing the voice input.</li>
       </ul>
 
+      {/* steps to properly download and use the project */}
       <h2 className="mt-5">Usage</h2>
       <ol className="usage-steps list-unstyled text-start">
         <li>
@@ -53,6 +63,7 @@ function Project2() {
         </li>
       </ol>
 
+      {/* Screenshots of the project */}
       <h2 className="mt-5">Screenshots</h2>
       <div className="image-block mt-4">
         <img src={recordImage} alt="Recording Interface" className="project-image-large" />
@@ -67,6 +78,7 @@ function Project2() {
         <p className="screenshot-caption">Code and Output Display</p>
       </div>
 
+      {/* future considerations and improvements for the project section*/}
       <h2 className="mt-5">Future Considerations</h2>
       <ul className="key-features list-unstyled">
         <li> Enhance multi-line code block support for more complex tasks.</li>
@@ -75,11 +87,13 @@ function Project2() {
         <li> Support for additional languages.</li>
       </ul>
 
+      {/* Technologies used for the project section */}
       <h2 className="mt-5">Technologies Used</h2>
       <p className="mt-3" style={{ color: '#F5E65A' }}>
         Flask, speech_recognition, Google Speech API, Python, HTML, CSS, JavaScript
       </p>
 
+      {/* button that takes you to the github repo for the project */}
       <div className="mt-5">
         <Button
           href="https://github.com/an301/voice-based-code-editor"
@@ -94,4 +108,5 @@ function Project2() {
   );
 }
 
+// Export 
 export default Project2;
