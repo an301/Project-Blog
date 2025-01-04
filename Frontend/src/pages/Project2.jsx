@@ -54,13 +54,7 @@ function Project2() {
             <li>The generated Python code and its output will be displayed.</li>
           </ul>
         </li>
-        <li>
-          <strong>Step 4:</strong> Explore further:
-          <ul>
-            <li>Supports single-line Python commands with plans for multi-line support in the future.</li>
-            <li>Expanding to support additional languages and improve execution for more complex Python code.</li>
-          </ul>
-        </li>
+        
       </ol>
 
       {/* Screenshots of the project */}
