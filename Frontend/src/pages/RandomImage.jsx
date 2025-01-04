@@ -23,7 +23,7 @@ function RandomImage() {
   return (
     <div className="container text-center mt-5">
       <h1>Random Image Generator</h1>
-      <p>Click the button below to generate a random image.</p>
+      <p>Click the button below to generate a random image using Pixabay's API.</p>
       <button className="btn btn-primary mt-3" onClick={fetchRandomImage}>
         Get Random Image
       </button>
