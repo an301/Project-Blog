@@ -10,12 +10,13 @@ function RandomImage() {
     setImage(null);
 
     try {
-      // Make a request to the backend
+      // Make request to backend
       const response = await axios.get("http://localhost:5000/api/random-image");
 
       // Set the image URL
       setImage(response.data.imageUrl);
-    } catch (err) {
+    } 
+    catch (err) {
       setError("Try again.");
     }
   };
@@ -23,9 +24,9 @@ function RandomImage() {
   return (
     <div className="container text-center mt-5">
       <h1>Random Image Generator</h1>
-      <p>Click the button below to generate a random image using Pixabay's API.</p>
+      <p>Generate a random image using Pixabay's API.</p>
       <button className="btn btn-primary mt-3" onClick={fetchRandomImage}>
-        Get Random Image
+        Generate Random Image
       </button>
       {error && <p className="mt-3 text-danger">{error}</p>}
       {image && (

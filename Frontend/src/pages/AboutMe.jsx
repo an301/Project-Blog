@@ -33,6 +33,9 @@ function AboutMe() {
       <p className="mt-3">
         I'm passionate about AI and Machine Learning and excited to work on projects in these fields.
       </p>
+      <p className="mt-3">
+        Outside of coding, I enjoy playing basketball and staying active. I also love going on road trips to places like the beach, where I can relax and have fun.
+      </p>
       <div className="mt-5">
         <h2 className="mb-4" style={{ color: '#FFFFFF' }}>Technologies I Work With</h2>
         <ul className="d-flex flex-wrap justify-content-center list-unstyled">

@@ -38,20 +38,18 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Scrolling Marquee Text */}
-      <div className="marquee-container text-center">
-        <div className="marquee">
-          <p>
-            print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(
-            <span id="printText2">"Welcome To My Portfolio"</span>) · console.log(
-            <span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;
-            <span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
-          </p>
-        </div>
+      {/* Static "marquee" text that glows (with reduced intensity and smaller font) */}
+      <div className="static-marquee text-center">
+        <p>
+          print(<span id="printText1">"Welcome To My Portfolio"</span>) · println(
+          <span id="printText2">"Welcome To My Portfolio"</span>) · console.log(
+          <span id="printText3">"Welcome To My Portfolio"</span>) · &lt;h1&gt;
+          <span id="printText4">Welcome To My Portfolio</span>&lt;/h1&gt;
+        </p>
       </div>
 
-      {/* Main Content */}
-      <div className="text-center intro-container">
+      {/* Header and Intro Text */}
+      <div className="text-center">
         <h1 className="header">Hi, I'm Anish</h1>
         <p className="intro-text">
           Learn about me, explore my projects, and see what I've built.
@@ -59,9 +57,13 @@ function Home() {
       </div>
 
       {/* Cards Section */}
-      <div className="d-flex justify-content-center flex-wrap mt-5">
+      <div className="container d-flex justify-content-center flex-wrap mt-5">
         {cardData.map((card, index) => (
-          <Card key={index} className="custom-card mx-3 mb-4" style={{ width: "16rem" }}>
+          <Card
+            key={index}
+            className="custom-card mx-3 mb-4"
+            style={{ width: "16rem" }}
+          >
             <Card.Img variant="top" src={card.img} />
             <Card.Body>
               <Card.Title>{card.title}</Card.Title>

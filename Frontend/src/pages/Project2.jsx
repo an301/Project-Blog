@@ -75,6 +75,11 @@ function Project2() {
         <li> Support for additional languages.</li>
       </ul>
 
+      <h2 className="mt-5">Technologies Used</h2>
+      <p className="mt-3" style={{ color: '#F5E65A' }}>
+        Flask, speech_recognition, Google Speech API, Python, HTML, CSS, JavaScript
+      </p>
+
       <div className="mt-5">
         <Button
           href="https://github.com/an301/voice-based-code-editor"

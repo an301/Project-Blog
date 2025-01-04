@@ -1,10 +1,10 @@
 // **Color Variables**
 $primary-color: #070F2B;
-$secondary-color: #1A2A6C; 
+$secondary-color: #1A2A6C;
 $accent-color: #535C91;
-$text-color: #9290C3; 
-$hover-highlight-color: #FFFFFF; 
-$button-hover-bg: $accent-color; 
+$text-color: #9290C3;
+$hover-highlight-color: #FFFFFF;
+$button-hover-bg: $accent-color;
 $navbar-bg-color: #1B1A55;
 
 // **Keyframes for Flowing Gradient Movement**
@@ -29,7 +29,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
-  overflow-x: hidden;
+  overflow-x: hidden; // remove or comment out if you need horizontal scroll
 }
 
 // **Responsive Container for Content**
@@ -40,10 +40,10 @@ body {
   box-sizing: border-box;
 }
 
-// **Navbar Customization**
+// **Navbar Customization** (if you use react-bootstrap Navbar)
 .navbar {
-  background-color: $navbar-bg-color !important; // Solid background for the navbar
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add subtle shadow for better visibility
+  background-color: $navbar-bg-color !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   .nav-link {
     font-family: 'Google Sans', sans-serif;
@@ -82,62 +82,65 @@ p {
   color: #F5E65A;
 }
 
-// **Marquee Styling**
-.marquee {
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  padding: 10px 0;
+
+.header {
+  /* Responsive font: grows from 2rem to 3.5rem depending on viewport width */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  word-break: break-word;
+  white-space: normal;
 }
 
-.marquee p {
-  display: inline-block;
-  animation: scroll-left 15s linear infinite;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 16px;
+.intro-text {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.5;
+  margin: 0 auto 2rem auto;
+  word-break: break-word;
+  white-space: normal;
+}
+
+
+.static-marquee {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.static-marquee p {
+  /* Even smaller font & milder glow */
+  font-size: 12px;
   color: rgb(200, 230, 150);
+  animation: glow 3s infinite ease-in-out;
 }
 
-// Individual text colors in the marquee
-#printText1 {
-  color: rgb(226, 141, 112);
-}
-
-#printText2 {
-  color: rgb(226, 141, 112);
-}
-
-#printText3 {
-  color: rgb(226, 141, 112);
-}
-
+#printText1,
+#printText2,
+#printText3,
 #printText4 {
   color: rgb(226, 141, 112);
 }
 
-// **Animation for Scrolling Text**
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
+/* Keyframes for an even softer glowing effect */
+@keyframes glow {
+  0%, 100% {
+    text-shadow:
+      0 0 3px #999,    /* lowered from 5 to 3, changed color to #999 */
+      0 0 6px #999,    /* 10 to 6 */
+      0 0 10px #dd2,   /* 15 to 10, color from #ff3 to #dd2 (slightly darker) */
+      0 0 15px #dd2;   /* 25 to 15 */
   }
-  100% {
-    transform: translateX(-100%);
+  50% {
+    text-shadow: none;
   }
 }
 
-// **Media Queries for Responsive Design**
+// **Media Queries for Responsiveness**
 @media (max-width: 768px) {
   h1, h2, h3, h4, h5, h6 {
     font-size: 1.8rem;
   }
 
-  .navbar {
-    padding: 10px;
-  }
-
-  .marquee p {
-    font-size: 14px;
+  .static-marquee p {
+    font-size: 10px; /* reduce further on tablet sizes */
   }
 }
 
@@ -146,8 +149,8 @@ p {
     font-size: 1.5rem;
   }
 
-  .marquee p {
-    font-size: 12px;
+  .static-marquee p {
+    font-size: 9px; /* reduce even more on small screens */
   }
 
   .container {
@@ -300,7 +303,7 @@ p {
 
 // **Project Images (Large Display)**
 .project-image-large {
-  max-width: 80%; // Larger image size
+  max-width: 80%; 
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -334,16 +337,16 @@ p {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.05); // Subtle background
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 15px;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
-  width: 150px; // Adjust size for consistency
+  width: 150px;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1); // Brighter on hover
-    box-shadow: 0 0 10px $hover-highlight-color; // Glow effect
-    transform: scale(1.05); // Slight zoom
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px $hover-highlight-color;
+    transform: scale(1.05);
   }
 }
 
@@ -364,40 +367,40 @@ p {
   text-align: center;
 }
 
-// Card Customization
+// **Card Customization**
 .custom-card {
-  background-color: #2A145A; // Dark purple background
-  color: #FFFFFF; // White text color for readability
-  border-radius: 10px; // Rounded corners
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Subtle shadow
+  background-color: #2A145A;
+  color: #FFFFFF; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   .card-title {
-    color: #FFD700; // Goldish color for title readability
-    font-size: 1.2rem; // Adjust font size
-    font-family: 'Google Sans', sans-serif; // Consistent with your typography
+    color: #FFD700;
+    font-size: 1.2rem;
+    font-family: 'Google Sans', sans-serif;
   }
 
   .card-text {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem; // Smaller text size
-    color: #EAEAEA; // Light gray for text
+    font-size: 0.9rem;
+    color: #EAEAEA; 
   }
 
   .btn {
-    background-color: #535C91; // Blue-gray button
-    color: #FFFFFF; // White text
+    background-color: #535C91; 
+    color: #FFFFFF;
     border: none;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: lighten(#535C91, 10%); // Slightly lighter blue-gray
-      box-shadow: 0 0 8px #FFFFFF; // Glow effect
+      background-color: lighten(#535C91, 10%);
+      box-shadow: 0 0 8px #FFFFFF;
     }
   }
 
   &:hover {
-    transform: scale(1.05); // Slight zoom on hover
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // Stronger shadow on hover
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 }

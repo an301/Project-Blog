@@ -45,18 +45,19 @@ app.get("/api/random-image", async (req, res) => {
 
     // Check if the response contains images
     if (response.data.hits.length > 0) {
-      const randomImage =
-        response.data.hits[Math.floor(Math.random() * response.data.hits.length)];
+      const randomImage = response.data.hits[Math.floor(Math.random() * response.data.hits.length)];
       res.json({ imageUrl: randomImage.largeImageURL });
-    } else {
+    } 
+    else {
       res.status(404).json({ message: "No images found." });
     }
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(error);
     res.status(500).json({ message: "An error occurred. Please try again." });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`http://localhost:${PORT}`);
 });
